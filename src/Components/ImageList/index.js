@@ -1,8 +1,14 @@
-import React from "react";
+import "Styles/ImageList/index.css";
 
 const ImageList = () => (
   <>
-    <div>ImageList </div>
+    <div className="container">
+      <div className="topsection">Top</div>
+      <div className="bottomsection">
+        <div className="leftsidemenubottomsection">left</div>
+        <div className="rightmainbottomsection">right</div>
+      </div>
+    </div>
   </>
 );
 

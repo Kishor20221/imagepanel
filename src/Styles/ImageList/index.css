@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    --borderColor:#8d8d8da4;
+  }
+
+.topsection {
+    height:11vh;
+    border-bottom: 1px solid var(--borderColor);
+}
+
+.bottomsection {
+    height: 88vh;
+    display: flex;
+}
+
+.leftsidemenubottomsection {
+    width: 15vw;
+    border-right: 1px solid var(--borderColor);
+} 
+
+.rightmainbottomsection {
+    width: 85vw;
+} 
