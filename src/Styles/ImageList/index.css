@@ -15,8 +15,11 @@
 }
 
 .leftsidemenubottomsection {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
     width: 15vw;
-    border-right: 1px solid var(--borderColor);
+    border-right: 1px solid var(--borderColor);        
 } 
 
 .rightmainbottomsection {
@@ -30,4 +33,12 @@
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+}
+
+.lefttopsidemenu {
+    border: 1px solid var(--borderColor);
+}
+
+.leftbottomslider {
+    border: 1px solid var(--borderColor);
 }

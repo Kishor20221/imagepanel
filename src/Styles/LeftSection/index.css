@@ -1,0 +1,16 @@
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+}
+
+li { 
+    background: rgb(250, 161, 60);
+    padding: 5px;   
+    
+ }
+li:hover {
+    cursor: pointer;
+}
+li:nth-child(odd) { background: rgb(245, 209, 176); }
