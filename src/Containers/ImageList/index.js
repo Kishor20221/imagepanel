@@ -41,9 +41,7 @@ const ImageList = () => {
 
   return (
     <>
-      <div>
-        <ImageListComponent />
-      </div>
+      <div>{imageList && <ImageListComponent imageList={imageList} />}</div>
     </>
   );
 };

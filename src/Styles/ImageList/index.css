@@ -21,4 +21,5 @@
 
 .rightmainbottomsection {
     width: 85vw;
+    overflow-y: auto;
 } 
