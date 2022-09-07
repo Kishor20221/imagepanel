@@ -8,9 +8,11 @@ import { imageSampleList } from "Stubs/images";
 
 const ImageList = () => {
   const [imageList, setImageList] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   //   const [isLoader, setIsLoader] = useState(false);
   //   const [error, setError] = useState(null);
-  console.log("imageList:", imageList);
+  console.log("ImageListContainer imageList:", imageList);
+  console.log("ImageListContainer selectedCategory:", selectedCategory);
   //   const fetchImageList = () => {
   //     setIsLoader(true);
   //     setError(null);
@@ -41,7 +43,15 @@ const ImageList = () => {
 
   return (
     <>
-      <div>{imageList && <ImageListComponent imageList={imageList} />}</div>
+      <div>
+        {imageList && (
+          <ImageListComponent
+            imageList={imageList}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+        )}
+      </div>
     </>
   );
 };
