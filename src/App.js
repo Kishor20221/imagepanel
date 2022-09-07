@@ -2,6 +2,7 @@ import "./App.css";
 import AppRoutes from "Components/AppRoutes";
 
 function App() {
+  console.log("inside App");
   return (
     <div className="App">
       <AppRoutes />
