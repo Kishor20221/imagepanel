@@ -23,7 +23,9 @@ const ImageSection = ({
       {imageArray &&
         imageArray
           .filter((val) =>
-            searchText ? val.text.indexOf(searchText) > -1 : true
+            searchText
+              ? val.text.toLowerCase().indexOf(searchText.toLowerCase()) > -1
+              : true
           )
           .map((val, index) => {
             const { image, text } = val || {};
