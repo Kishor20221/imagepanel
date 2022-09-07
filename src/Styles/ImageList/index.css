@@ -22,4 +22,12 @@
 .rightmainbottomsection {
     width: 85vw;
     overflow-y: auto;
+    padding: 1rem;
 } 
+
+.imageFlex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}

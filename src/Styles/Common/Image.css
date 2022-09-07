@@ -1,5 +1,5 @@
 .imagestyle {
-    border: 1px solid green;
-    height: var(--imageHeight);
-    width: var(--imageWidth);
+    border: 1px solid rgb(116, 121, 116);
+    /* height: var(--imageHeight);
+    width: var(--imageWidth); */
 }

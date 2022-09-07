@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import "Styles/Common/Image.css";
+
 const ImageComponent = ({
   imageURL,
   imageHeight = "100px",
@@ -10,9 +12,9 @@ const ImageComponent = ({
   return (
     <div
       className="imagestyle"
-      style={`--imageHeight: ${imageHeight}; --imageWidth: ${imageWidth}`}
+      //   style={{ "--imageHeight": imageHeight, "--imageWidth": imageWidth }}
     >
-      <img src={imageURL} />
+      <img src={imageURL} width={imageHeight} height={imageWidth} />
       <div>{imageText}</div>
     </div>
   );
