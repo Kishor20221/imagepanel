@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "Styles/Common/Image.css";
+import "Styles/Common/image.css";
 
 const ImageComponent = ({
   imageURL,

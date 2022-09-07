@@ -7,6 +7,9 @@
 .topsection {
     height:11vh;
     border-bottom: 1px solid var(--borderColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .bottomsection {

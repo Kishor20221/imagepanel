@@ -9,6 +9,7 @@ import { imageSampleList } from "Stubs/images";
 const ImageList = () => {
   const [imageList, setImageList] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [searchText, setSearchText] = useState(null);
   //   const [isLoader, setIsLoader] = useState(false);
   //   const [error, setError] = useState(null);
   console.log("ImageListContainer imageList:", imageList);
@@ -47,8 +48,10 @@ const ImageList = () => {
         {imageList && (
           <ImageListComponent
             imageList={imageList}
+            searchText={searchText}
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
+            setSearchText={setSearchText}
           />
         )}
       </div>
