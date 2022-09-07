@@ -13,6 +13,7 @@ const ImageList = ({ imageList, setSelectedCategory, selectedCategory }) => (
         <div className="leftsidemenubottomsection">
           <LeftSection
             imageList={imageList}
+            selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
           />
         </div>

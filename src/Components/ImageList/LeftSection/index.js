@@ -4,12 +4,17 @@ import ImageCategory from "Components/ImageList/LeftSection/ImageCategory";
 import Slider from "Components/ImageList/LeftSection/Slider";
 import "Styles/ImageList/index.css";
 
-const LeftSection = ({ imageList = {}, setSelectedCategory }) => {
+const LeftSection = ({
+  imageList = {},
+  setSelectedCategory,
+  selectedCategory,
+}) => {
   return (
     <>
       <div className="lefttopsidemenu">
         <ImageCategory
           imageList={imageList}
+          selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
       </div>
@@ -22,11 +27,13 @@ const LeftSection = ({ imageList = {}, setSelectedCategory }) => {
 
 LeftSection.propTypes = {
   imageList: PropTypes.object,
+  selectedCategory: PropTypes.string,
   setSelectedCategory: PropTypes.func,
 };
 
 LeftSection.defaultProps = {
   imageList: {},
+  selectedCategory: "",
   setSelectedCategory: () => {},
 };
 

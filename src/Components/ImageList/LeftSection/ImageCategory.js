@@ -3,7 +3,11 @@ import PropTypes from "prop-types";
 
 import "Styles/LeftSection/index.css";
 
-const ImageCategory = ({ imageList = {}, setSelectedCategory }) => {
+const ImageCategory = ({
+  imageList = {},
+  setSelectedCategory,
+  selectedCategory,
+}) => {
   const imageCategory = [];
   Object.keys(imageList).forEach((value) => {
     imageCategory.push(value);
@@ -17,7 +21,13 @@ const ImageCategory = ({ imageList = {}, setSelectedCategory }) => {
             return (
               <li
                 key={`${val}-${index}`}
-                onClick={() => setSelectedCategory(val)}
+                onClick={() =>
+                  setSelectedCategory((prevState) => {
+                    if (prevState === val) return "";
+                    return val;
+                  })
+                }
+                className={selectedCategory === val ? "active" : null}
               >
                 {val}
               </li>
@@ -30,11 +40,13 @@ const ImageCategory = ({ imageList = {}, setSelectedCategory }) => {
 
 ImageCategory.propTypes = {
   imageList: PropTypes.object,
+  selectedCategory: PropTypes.string,
   setSelectedCategory: PropTypes.func,
 };
 
 ImageCategory.defaultProps = {
   imageList: {},
+  selectedCategory: "",
   setSelectedCategory: () => {},
 };
 

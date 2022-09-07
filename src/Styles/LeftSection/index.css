@@ -6,7 +6,7 @@ ul {
 }
 
 li { 
-    background: rgb(250, 161, 60);
+    background: rgb(236, 229, 221);
     padding: 5px;   
     
  }
@@ -14,3 +14,8 @@ li:hover {
     cursor: pointer;
 }
 li:nth-child(odd) { background: rgb(245, 209, 176); }
+li.active { 
+    background: rgb(250, 161, 60);
+
+    font-weight: bold;
+ }
