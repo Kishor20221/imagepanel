@@ -7,9 +7,11 @@ const ImageSection = ({ imageList = {}, selectedCategory = "" }) => {
   console.log("inside ImageSection imageList:", imageList);
   console.log("inside ImageSection selectedCategory:", selectedCategory);
   const imageArray = [];
-  Object.values(imageList).forEach((value) => {
-    imageArray.push(...value);
-  });
+  Object.keys(imageList)
+    .filter((key) => (selectedCategory ? key === selectedCategory : true))
+    .forEach((key) => {
+      imageArray.push(...imageList[key]);
+    });
   console.log("inside ImageSection imageArray:", imageArray);
 
   return (
