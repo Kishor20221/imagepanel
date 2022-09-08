@@ -13,7 +13,7 @@ const Slider = ({ sliderVal, setSliderVal }) => {
         min={0}
         max={1}
         step={0.01}
-        value={sliderVal}
+        value={Number(sliderVal)}
         onChange={(e) => {
           setSliderVal(e.target.value);
         }}

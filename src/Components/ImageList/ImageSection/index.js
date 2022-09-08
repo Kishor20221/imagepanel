@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 
 import ImageComponent from "Components/Common/Image";
 import "Styles/ImageList/index.css";
+import "Styles/Common/image.css";
 
 const ImageSection = ({
   imageList = {},
@@ -10,22 +11,6 @@ const ImageSection = ({
   sliderVal = 1,
   imageArray = [],
 }) => {
-  // console.log("inside ImageSection imageList:", imageList);
-  // console.log("inside ImageSection selectedCategory:", selectedCategory);
-  // const imageArray = [];
-  // Object.keys(imageList)
-  //   .filter((key) => (selectedCategory ? key === selectedCategory : true))
-  //   .forEach((key) => {
-  //     imageArray.push(
-  //       ...imageList[key].filter((val) =>
-  //         searchText
-  //           ? val.text.toLowerCase().indexOf(searchText.toLowerCase()) > -1
-  //           : true
-  //       )
-  //     );
-  //   });
-  // console.log("inside ImageSection imageArray:", imageArray);
-
   return (
     <div className="imageFlex">
       {imageArray.length === 0 ? (
@@ -35,11 +20,13 @@ const ImageSection = ({
         imageArray.map((val, index) => {
           const { image, text } = val || {};
           return (
-            <div key={`${val.text}-${index}`}>
+            <div
+              key={`${val.text}-${index}`}
+              className="imageparent"
+              style={{ "--imageWidth": "30%" }}
+            >
               <ImageComponent
                 imageURL={image}
-                imageHeight="400px"
-                imageWidth="400px"
                 imageText={text}
                 opacity={sliderVal}
               />

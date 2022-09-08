@@ -11,19 +11,16 @@ const ImageComponent = ({
   opacity = 1,
 }) => {
   return (
-    <div
-      className="imagestyle"
-      //   style={{ "--imageHeight": imageHeight, "--imageWidth": imageWidth }}
-    >
-      <img
-        src={imageURL}
-        width={imageHeight}
-        height={imageWidth}
-        className="imageopacity"
-        style={{ "--opacity": opacity }}
-      />
+    <>
+      <div>
+        <img
+          src={imageURL}
+          className="imagestyle"
+          style={{ "--opacity": opacity }}
+        />
+      </div>
       <div>{imageText}</div>
-    </div>
+    </>
   );
 };
 
