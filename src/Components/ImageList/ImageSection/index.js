@@ -23,7 +23,7 @@ const ImageSection = ({
             <div
               key={`${val.text}-${index}`}
               className="imageparent"
-              style={{ "--imageWidth": "30%" }}
+              style={{ "--imageWidth": "25%" }}
             >
               <ImageComponent
                 imageURL={image}
