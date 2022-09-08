@@ -6,7 +6,7 @@ const Slider = ({ sliderVal, setSliderVal }) => {
   console.log("sliderVal:", sliderVal);
   return (
     <>
-      <div>Opacity ({Number(sliderVal).toFixed(1)})</div>
+      <div>Opacity ({Number(sliderVal).toFixed(2)})</div>
       <input
         data-testid="slider"
         type="range"
