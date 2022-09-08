@@ -35,9 +35,6 @@ const ImageList = ({
   setSliderVal,
 }) => {
   const [aryImageDisplay, setAryImageDisplay] = useState([]);
-  console.log("inside ImageList imageList:", imageList);
-  console.log("inside ImageList aryImageDisplay:", aryImageDisplay);
-  console.log("inside ImageList selectedCategory:", selectedCategory);
 
   useEffect(() => {
     setAryImageDisplay(getFilteredList(imageList, selectedCategory, null));
@@ -61,7 +58,6 @@ const ImageList = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText]);
 
-  console.log("inside ImageList aryImageDisplay2:", aryImageDisplay);
   return (
     <>
       <div className="container">
@@ -83,13 +79,7 @@ const ImageList = ({
             />
           </div>
           <div className="rightmainbottomsection">
-            <ImageSection
-              imageArray={aryImageDisplay}
-              // imageList={imageList}
-              // searchText={searchText}
-              // selectedCategory={selectedCategory}
-              sliderVal={sliderVal}
-            />
+            <ImageSection imageArray={aryImageDisplay} sliderVal={sliderVal} />
           </div>
         </div>
       </div>
@@ -100,16 +90,20 @@ const ImageList = ({
 ImageList.propTypes = {
   imageList: PropTypes.object,
   selectedCategory: PropTypes.string,
+  searchText: PropTypes.string,
   setSelectedCategory: PropTypes.func,
   sliderVal: PropTypes.number,
   setSliderVal: PropTypes.func,
+  setSearchText: PropTypes.func,
 };
 ImageList.defaultProps = {
   imageList: {},
   selectedCategory: "",
+  searchText: "",
   setSelectedCategory: () => {},
   sliderVal: 1,
   setSliderVal: () => {},
+  setSearchText: () => {},
 };
 
 export default ImageList;

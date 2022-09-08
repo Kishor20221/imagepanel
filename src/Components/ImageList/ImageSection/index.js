@@ -4,13 +4,7 @@ import ImageComponent from "Components/Common/Image";
 import "Styles/ImageList/index.css";
 import "Styles/Common/image.css";
 
-const ImageSection = ({
-  imageList = {},
-  selectedCategory = "",
-  searchText = "",
-  sliderVal = 1,
-  imageArray = [],
-}) => {
+const ImageSection = ({ sliderVal = 1, imageArray = [] }) => {
   return (
     <div className="imageFlex">
       {imageArray.length === 0 ? (
@@ -40,15 +34,11 @@ const ImageSection = ({
 
 ImageSection.propTypes = {
   imageList: PropTypes.object,
-  searchText: PropTypes.string,
-  selectedCategory: PropTypes.string,
   sliderVal: PropTypes.number,
 };
 
 ImageSection.defaultProps = {
   imageList: {},
-  searchText: "",
-  selectedCategory: "",
   sliderVal: 1,
 };
 

@@ -13,8 +13,7 @@ const ImageList = () => {
   const [sliderVal, setSliderVal] = useState(1);
   //   const [isLoader, setIsLoader] = useState(false);
   //   const [error, setError] = useState(null);
-  console.log("ImageListContainer imageList:", imageList);
-  console.log("ImageListContainer selectedCategory:", selectedCategory);
+
   //   const fetchImageList = () => {
   //     setIsLoader(true);
   //     setError(null);
@@ -31,7 +30,6 @@ const ImageList = () => {
   //   };
 
   useEffect(() => {
-    console.log("inside useEffect");
     if (!imageList) {
       //   fetchImageList();
       setImageList(imageSampleList);
@@ -53,7 +51,7 @@ const ImageList = () => {
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
             setSearchText={setSearchText}
-            sliderVal={sliderVal}
+            sliderVal={Number(sliderVal)}
             setSliderVal={setSliderVal}
           />
         )}
