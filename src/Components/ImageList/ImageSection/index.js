@@ -15,33 +15,37 @@ const ImageSection = ({
   Object.keys(imageList)
     .filter((key) => (selectedCategory ? key === selectedCategory : true))
     .forEach((key) => {
-      imageArray.push(...imageList[key]);
+      imageArray.push(
+        ...imageList[key].filter((val) =>
+          searchText
+            ? val.text.toLowerCase().indexOf(searchText.toLowerCase()) > -1
+            : true
+        )
+      );
     });
   console.log("inside ImageSection imageArray:", imageArray);
 
   return (
     <div className="imageFlex">
-      {imageArray &&
-        imageArray
-          .filter((val) =>
-            searchText
-              ? val.text.toLowerCase().indexOf(searchText.toLowerCase()) > -1
-              : true
-          )
-          .map((val, index) => {
-            const { image, text } = val || {};
-            return (
-              <div key={`${val.text}-${index}`}>
-                <ImageComponent
-                  imageURL={image}
-                  imageHeight="400px"
-                  imageWidth="400px"
-                  imageText={text}
-                  opacity={sliderVal}
-                />
-              </div>
-            );
-          })}
+      {imageArray.length === 0 ? (
+        <span> No Search Found </span>
+      ) : (
+        imageArray &&
+        imageArray.map((val, index) => {
+          const { image, text } = val || {};
+          return (
+            <div key={`${val.text}-${index}`}>
+              <ImageComponent
+                imageURL={image}
+                imageHeight="400px"
+                imageWidth="400px"
+                imageText={text}
+                opacity={sliderVal}
+              />
+            </div>
+          );
+        })
+      )}
     </div>
   );
 };

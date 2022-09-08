@@ -6,7 +6,7 @@ const Slider = ({ sliderVal, setSliderVal }) => {
   console.log("sliderVal:", sliderVal);
   return (
     <>
-      <div>Opacity ({sliderVal})</div>
+      <div>Opacity ({Number(sliderVal).toFixed(1)})</div>
       <input
         data-testid="slider"
         type="range"
@@ -15,7 +15,6 @@ const Slider = ({ sliderVal, setSliderVal }) => {
         step={0.01}
         value={sliderVal}
         onChange={(e) => {
-          console.log("inside onChange:", e.target.value);
           setSliderVal(e.target.value);
         }}
       />
