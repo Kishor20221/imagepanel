@@ -1,6 +1,7 @@
 .imageparent {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-direction: column;
     border: 1px solid rgb(116, 121, 116);
     width: var(--imageWidth); 
@@ -13,5 +14,6 @@
 }
 
 .imagetext {
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
+    padding: 5px;
 }

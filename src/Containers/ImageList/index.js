@@ -9,7 +9,7 @@ import { imageSampleList } from "Stubs/images";
 const ImageList = () => {
   const [imageList, setImageList] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [searchText, setSearchText] = useState(null);
+  const [searchText, setSearchText] = useState("");
   const [sliderVal, setSliderVal] = useState(1);
   //   const [isLoader, setIsLoader] = useState(false);
   //   const [error, setError] = useState(null);

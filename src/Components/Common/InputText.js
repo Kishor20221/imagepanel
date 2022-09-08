@@ -5,7 +5,7 @@ import "Styles/Common/inputtext.css";
 const InputText = ({
   isRequired = false,
   searchText = "",
-  setSearchText,
+  setSearchText = "",
   placeholder,
 }) => (
   <>
@@ -24,14 +24,14 @@ const InputText = ({
 
 InputText.propTypes = {
   isRequired: PropTypes.bool,
-  input: PropTypes.string,
+  searchText: PropTypes.string,
   placeholder: PropTypes.string,
   setSearchText: PropTypes.func,
 };
 
 InputText.defaultProps = {
   isRequired: false,
-  input: "",
+  searchText: "",
   placeholder: "Search",
   setSearchText: () => {},
 };

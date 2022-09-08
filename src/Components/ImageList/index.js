@@ -29,7 +29,7 @@ const ImageList = ({
   imageList,
   setSelectedCategory,
   selectedCategory,
-  searchText,
+  searchText = "",
   setSearchText,
   sliderVal,
   setSliderVal,

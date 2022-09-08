@@ -9,6 +9,10 @@ input[type="range"] {
     /* transform-origin: left;  */
 }
 
-.sliderlabel {
-    overflow-wrap: break-word;
+.sliderlabel {    
+    text-align: center;
+}
+
+.sliderparent {
+    border: 1px solid green;
 }
