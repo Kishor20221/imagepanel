@@ -8,6 +8,23 @@ import { debounce } from "Helpers";
 
 import "Styles/ImageList/index.css";
 
+const getFilteredList = (imageDisplayList, selectedCategory, searchWord) => {
+  const imageArray = [];
+  Object.keys(imageDisplayList)
+    .filter((key) => (selectedCategory ? key === selectedCategory : true))
+    .forEach((key) => {
+      imageArray.push(
+        ...imageDisplayList[key].filter((val) =>
+          searchWord
+            ? val.text.toLowerCase().indexOf(searchWord.toLowerCase()) > -1
+            : true
+        )
+      );
+    });
+
+  return imageArray;
+};
+
 const ImageList = ({
   imageList,
   setSelectedCategory,
@@ -23,19 +40,7 @@ const ImageList = ({
   console.log("inside ImageList selectedCategory:", selectedCategory);
 
   useEffect(() => {
-    const imageArray = [];
-    Object.keys(imageList)
-      .filter((key) => (selectedCategory ? key === selectedCategory : true))
-      .forEach((key) => {
-        imageArray.push(
-          ...imageList[key].filter((val) =>
-            searchText
-              ? val.text.toLowerCase().indexOf(searchText.toLowerCase()) > -1
-              : true
-          )
-        );
-      });
-    setAryImageDisplay(imageArray);
+    setAryImageDisplay(getFilteredList(imageList, selectedCategory, null));
   }, [selectedCategory]);
 
   const debouncedSearch = useCallback(
@@ -46,20 +51,9 @@ const ImageList = ({
       );
       console.log("inside ImageSection debouncedSave searchWord:", searchWord);
 
-      const imageArray = [];
-      Object.keys(imageDisplayList)
-        .filter((key) => (selectedCategory ? key === selectedCategory : true))
-        .forEach((key) => {
-          imageArray.push(
-            ...imageDisplayList[key].filter((val) =>
-              searchWord
-                ? val.text.toLowerCase().indexOf(searchWord.toLowerCase()) > -1
-                : true
-            )
-          );
-        });
-      setAryImageDisplay(imageArray);
-      console.log("inside ImageSection debouncedSave imageArray:", imageArray);
+      setAryImageDisplay(
+        getFilteredList(imageDisplayList, selectedCategory, searchWord)
+      );
     }, 1000),
     [] // will be created only once initially
   );
@@ -67,9 +61,6 @@ const ImageList = ({
   useEffect(() => {
     debouncedSearch(searchText, imageList);
   }, [searchText]);
-  // useEffect(() => {
-
-  // }, []);
 
   console.log("inside ImageList aryImageDisplay2:", aryImageDisplay);
   return (
