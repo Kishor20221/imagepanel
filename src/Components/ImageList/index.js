@@ -41,6 +41,7 @@ const ImageList = ({
 
   useEffect(() => {
     setAryImageDisplay(getFilteredList(imageList, selectedCategory, null));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory]);
 
   const debouncedSearch = useCallback(
@@ -55,11 +56,13 @@ const ImageList = ({
         getFilteredList(imageDisplayList, selectedCategory, searchWord)
       );
     }, 1000),
+    // eslint-disable-next-line
     [] // will be created only once initially
   );
 
   useEffect(() => {
     debouncedSearch(searchText, imageList);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText]);
 
   console.log("inside ImageList aryImageDisplay2:", aryImageDisplay);
