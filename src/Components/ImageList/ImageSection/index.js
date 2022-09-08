@@ -8,22 +8,23 @@ const ImageSection = ({
   selectedCategory = "",
   searchText = "",
   sliderVal = 1,
+  imageArray = [],
 }) => {
-  console.log("inside ImageSection imageList:", imageList);
-  console.log("inside ImageSection selectedCategory:", selectedCategory);
-  const imageArray = [];
-  Object.keys(imageList)
-    .filter((key) => (selectedCategory ? key === selectedCategory : true))
-    .forEach((key) => {
-      imageArray.push(
-        ...imageList[key].filter((val) =>
-          searchText
-            ? val.text.toLowerCase().indexOf(searchText.toLowerCase()) > -1
-            : true
-        )
-      );
-    });
-  console.log("inside ImageSection imageArray:", imageArray);
+  // console.log("inside ImageSection imageList:", imageList);
+  // console.log("inside ImageSection selectedCategory:", selectedCategory);
+  // const imageArray = [];
+  // Object.keys(imageList)
+  //   .filter((key) => (selectedCategory ? key === selectedCategory : true))
+  //   .forEach((key) => {
+  //     imageArray.push(
+  //       ...imageList[key].filter((val) =>
+  //         searchText
+  //           ? val.text.toLowerCase().indexOf(searchText.toLowerCase()) > -1
+  //           : true
+  //       )
+  //     );
+  //   });
+  // console.log("inside ImageSection imageArray:", imageArray);
 
   return (
     <div className="imageFlex">
