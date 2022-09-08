@@ -19,7 +19,7 @@ const ImageComponent = ({
           style={{ "--opacity": opacity }}
         />
       </div>
-      <div>{imageText}</div>
+      <div className="imagetext">{imageText}</div>
     </>
   );
 };
