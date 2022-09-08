@@ -12,6 +12,8 @@ const ImageList = ({
   selectedCategory,
   searchText,
   setSearchText,
+  sliderVal,
+  setSliderVal,
 }) => (
   <>
     <div className="container">
@@ -28,6 +30,8 @@ const ImageList = ({
             imageList={imageList}
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
+            sliderVal={sliderVal}
+            setSliderVal={setSliderVal}
           />
         </div>
         <div className="rightmainbottomsection">
@@ -35,6 +39,7 @@ const ImageList = ({
             imageList={imageList}
             searchText={searchText}
             selectedCategory={selectedCategory}
+            sliderVal={sliderVal}
           />
         </div>
       </div>
@@ -46,11 +51,15 @@ ImageList.propTypes = {
   imageList: PropTypes.object,
   selectedCategory: PropTypes.string,
   setSelectedCategory: PropTypes.func,
+  sliderVal: PropTypes.number,
+  setSliderVal: PropTypes.func,
 };
 ImageList.defaultProps = {
   imageList: {},
   selectedCategory: "",
   setSelectedCategory: () => {},
+  sliderVal: 1,
+  setSliderVal: () => {},
 };
 
 export default ImageList;

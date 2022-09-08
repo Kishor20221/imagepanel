@@ -7,6 +7,7 @@ const ImageSection = ({
   imageList = {},
   selectedCategory = "",
   searchText = "",
+  sliderVal = 1,
 }) => {
   console.log("inside ImageSection imageList:", imageList);
   console.log("inside ImageSection selectedCategory:", selectedCategory);
@@ -36,6 +37,7 @@ const ImageSection = ({
                   imageHeight="400px"
                   imageWidth="400px"
                   imageText={text}
+                  opacity={sliderVal}
                 />
               </div>
             );
@@ -48,12 +50,14 @@ ImageSection.propTypes = {
   imageList: PropTypes.object,
   searchText: PropTypes.string,
   selectedCategory: PropTypes.string,
+  sliderVal: PropTypes.number,
 };
 
 ImageSection.defaultProps = {
   imageList: {},
   searchText: "",
   selectedCategory: "",
+  sliderVal: 1,
 };
 
 export default ImageSection;

@@ -10,6 +10,7 @@ const ImageList = () => {
   const [imageList, setImageList] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchText, setSearchText] = useState(null);
+  const [sliderVal, setSliderVal] = useState(1);
   //   const [isLoader, setIsLoader] = useState(false);
   //   const [error, setError] = useState(null);
   console.log("ImageListContainer imageList:", imageList);
@@ -52,6 +53,8 @@ const ImageList = () => {
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
             setSearchText={setSearchText}
+            sliderVal={sliderVal}
+            setSliderVal={setSliderVal}
           />
         )}
       </div>

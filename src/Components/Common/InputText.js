@@ -24,14 +24,14 @@ const InputText = ({
 
 InputText.propTypes = {
   isRequired: PropTypes.bool,
-  searchText: PropTypes.string,
+  input: PropTypes.string,
   placeholder: PropTypes.string,
   setSearchText: PropTypes.func,
 };
 
 InputText.defaultProps = {
   isRequired: false,
-  searchText: "",
+  input: "",
   placeholder: "Search",
   setSearchText: () => {},
 };

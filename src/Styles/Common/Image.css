@@ -3,3 +3,6 @@
     /* height: var(--imageHeight);
     width: var(--imageWidth); */
 }
+.imageopacity {
+    opacity: var(--opacity);
+}

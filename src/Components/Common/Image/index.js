@@ -8,13 +8,20 @@ const ImageComponent = ({
   imageHeight = "100px",
   imageWidth = "100px",
   imageText = "",
+  opacity = 1,
 }) => {
   return (
     <div
       className="imagestyle"
       //   style={{ "--imageHeight": imageHeight, "--imageWidth": imageWidth }}
     >
-      <img src={imageURL} width={imageHeight} height={imageWidth} />
+      <img
+        src={imageURL}
+        width={imageHeight}
+        height={imageWidth}
+        className="imageopacity"
+        style={{ "--opacity": opacity }}
+      />
       <div>{imageText}</div>
     </div>
   );
@@ -25,6 +32,7 @@ ImageComponent.propTypes = {
   imageHeight: PropTypes.string,
   imageWidth: PropTypes.string,
   imageText: PropTypes.string,
+  opacity: PropTypes.number,
 };
 
 ImageComponent.defaultProps = {
@@ -32,6 +40,7 @@ ImageComponent.defaultProps = {
   imageHeight: "100px",
   imageWidth: "100px",
   imageText: "",
+  opacity: 1,
 };
 
 export default ImageComponent;
