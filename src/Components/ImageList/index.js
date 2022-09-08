@@ -45,19 +45,15 @@ const ImageList = ({
   }, [selectedCategory]);
 
   const debouncedSearch = useCallback(
-    debounce((searchWord, imageDisplayList) => {
-      console.log(
-        "inside ImageSection debouncedSave imageDisplayList:",
-        imageDisplayList
-      );
-      console.log("inside ImageSection debouncedSave searchWord:", searchWord);
-
-      setAryImageDisplay(
-        getFilteredList(imageDisplayList, selectedCategory, searchWord)
-      );
-    }, 1000),
-    // eslint-disable-next-line
-    [] // will be created only once initially
+    debounce(
+      (searchWord, imageDisplayList) =>
+        setAryImageDisplay(
+          getFilteredList(imageDisplayList, selectedCategory, searchWord)
+        ),
+      1000
+    ),
+    // eslint-disable-line react-hooks/exhaustive-deps
+    []
   );
 
   useEffect(() => {
