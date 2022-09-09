@@ -37,14 +37,16 @@ const ImageList = ({
   const [aryImageDisplay, setAryImageDisplay] = useState([]);
 
   useEffect(() => {
-    setAryImageDisplay(getFilteredList(imageList, selectedCategory, null));
+    setAryImageDisplay(
+      getFilteredList(imageList, selectedCategory, searchText)
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory]);
 
   // eslint-disable-next-line
   const debouncedSearch = useCallback(
     debounce(
-      (searchWord, imageDisplayList) =>
+      (searchWord, selectedCategory, imageDisplayList) =>
         setAryImageDisplay(
           getFilteredList(imageDisplayList, selectedCategory, searchWord)
         ),
@@ -55,7 +57,7 @@ const ImageList = ({
   );
 
   useEffect(() => {
-    debouncedSearch(searchText, imageList);
+    debouncedSearch(searchText, selectedCategory, imageList);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText]);
 
