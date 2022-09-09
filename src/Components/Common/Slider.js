@@ -9,6 +9,7 @@ const Slider = ({ sliderVal, setSliderVal }) => (
       type="range"
       min={0}
       max={1}
+      orient="vertical" // For Firefox vertical slider
       step={0.01}
       value={sliderVal}
       onChange={(e) => {

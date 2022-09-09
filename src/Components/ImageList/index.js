@@ -41,6 +41,7 @@ const ImageList = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory]);
 
+  // eslint-disable-next-line
   const debouncedSearch = useCallback(
     debounce(
       (searchWord, imageDisplayList) =>
