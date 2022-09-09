@@ -44,7 +44,6 @@
 }
 
 .leftbottomslider {
-    border: 1px solid var(--borderColor);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,4 +1,4 @@
-input {
+input[type = "text"] {
     padding: 0rem;
     width: 40%;
     height: 2.3rem;
